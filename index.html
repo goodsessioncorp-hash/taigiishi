@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>たいぎいし。｜米子城の石垣キャラクター</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&family=M+PLUS+Rounded+1c:wght@700;900&display=swap');
+:root{--ink:#1a1208;--brown:#6B4226;--gold:#D4A017;--gl:#F5D97A;--red:#C0392B;--sg:#B8B0A0;--sd:#786B5A;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#fff;font-family:'Zen Maru Gothic','M PLUS Rounded 1c',sans-serif;color:var(--ink);overflow-x:hidden;}
+.hero{min-height:100vh;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px 40px;}
+.eyebrow{font-size:13px;color:var(--brown);letter-spacing:.2em;margin-bottom:8px;font-weight:700;}
+.hero-title{font-size:clamp(52px,14vw,96px);font-weight:900;line-height:1;text-align:center;}
+.hero-title .period{color:var(--gold);}
+.char-wrap{position:relative;margin:24px auto;width:min(580px,90vw);}
+.char-img{width:100%;filter:drop-shadow(0 6px 20px rgba(0,0,0,.12));animation:float 4s ease-in-out infinite;display:block;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.bubble{position:absolute;top:-20px;right:0;background:#fff;border:3px solid var(--ink);border-radius:50px;padding:7px 15px;font-size:14px;font-weight:700;white-space:nowrap;box-shadow:3px 3px 0 var(--ink);z-index:10;}
+.bubble::after{content:'';position:absolute;bottom:-12px;left:18px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:12px solid var(--ink);}
+.bubble::before{content:'';position:absolute;bottom:-8px;left:20px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:10px solid #fff;z-index:1;}
+.hero-desc{background:#fff;border:2.5px solid var(--ink);border-radius:16px;padding:14px 24px;font-size:14px;line-height:1.9;text-align:center;max-width:440px;box-shadow:4px 4px 0 var(--ink);margin-top:10px;}
+.hero-desc em{font-style:normal;color:var(--red);font-weight:700;}
+.marquee{background:var(--gold);padding:20px;overflow:hidden;}
+.marquee-inner{display:flex;gap:48px;white-space:nowrap;animation:scroll 18s linear infinite;font-size:18px;font-weight:900;width:max-content;}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.qi{display:flex;align-items:center;gap:12px;}
+.qd{width:8px;height:8px;background:var(--ink);border-radius:50%;}
+section{padding:60px 20px;}
+.slabel{font-size:11px;letter-spacing:.25em;font-weight:700;color:var(--sd);text-align:center;margin-bottom:8px;}
+.stitle{font-size:clamp(24px,6vw,38px);font-weight:900;text-align:center;line-height:1.3;margin-bottom:36px;}
+.stitle .ac{color:var(--gold);position:relative;display:inline-block;}
+.stitle .ac::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:6px;background:var(--gl);z-index:-1;border-radius:3px;}
+.about{background:#fff;}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:880px;margin:0 auto;}
+.acard{background:#fff;border:2.5px solid var(--ink);border-radius:18px;padding:24px;box-shadow:4px 4px 0 var(--ink);}
+.acard .ic{font-size:32px;margin-bottom:10px;}
+.acard h3{font-size:16px;font-weight:900;margin-bottom:6px;color:var(--brown);}
+.acard p{font-size:13px;line-height:1.8;color:#444;}
+.traits{background:linear-gradient(135deg,#FFF0C8,#FFE8A8);}
+.tlist{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+.titem{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start;box-shadow:3px 3px 0 var(--ink);}
+.tnum{background:var(--ink);color:var(--gl);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;}
+.ttext strong{display:block;font-size:15px;font-weight:700;color:var(--brown);margin-bottom:3px;}
+.ttext p{font-size:13px;line-height:1.7;color:#555;}
+.goods{background:#fff;}
+.gimg{width:100%;max-width:680px;border-radius:14px;border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:block;margin:0 auto 28px;}
+.gcard{max-width:620px;margin:0 auto;border:2.5px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 var(--ink);}
+.ghead{background:var(--ink);color:var(--gl);font-size:12px;font-weight:900;letter-spacing:.12em;padding:10px 20px;text-align:center;}
+.gbody{padding:22px;}
+.gbody h3{font-size:20px;font-weight:900;margin-bottom:6px;}
+.gprice{font-size:17px;font-weight:900;color:var(--red);margin:8px 0;}
+.gprice span{font-size:13px;font-weight:400;color:#888;}
+.gbody p{font-size:13px;line-height:1.8;color:#555;}
+.badge{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle;}
+.stamps{background:linear-gradient(170deg,#FFFDF5,#FFF0C8);text-align:center;}
+.sprev{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:680px;margin:0 auto 28px;}
+.sbub{background:#fff;border:2px solid var(--ink);border-radius:10px;padding:7px 14px;font-size:13px;font-weight:700;box-shadow:2px 2px 0 var(--ink);}
+.sbadge{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gl));border:2px solid var(--ink);border-radius:30px;padding:9px 26px;font-size:14px;font-weight:900;box-shadow:3px 3px 0 var(--ink);}
+.sns{background:var(--ink);color:#fff;text-align:center;}
+.sns .stitle{color:var(--gl);}
+.sns .slabel{color:var(--sg);}
+.sns-btn{display:inline-flex;align-items:center;gap:10px;background:#E1306C;color:#fff;border:none;border-radius:50px;padding:14px 28px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;transition:.2s;}
+.sns-note{margin-top:22px;font-size:13px;color:var(--sg);line-height:1.8;}
+.contact{margin-top:44px;border-top:1px solid rgba(255,255,255,.15);padding-top:32px;}
+.contact p{font-size:13px;color:var(--sg);margin-bottom:16px;line-height:1.8;}
+.contact p strong{color:rgba(255,255,255,.75);}
+.clink{display:inline-block;color:rgba(255,255,255,.6);border:1.5px solid rgba(255,255,255,.3);border-radius:6px;padding:10px 22px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.08em;}
+.buy{background:#FFF8E7;text-align:center;}
+.bcard{max-width:540px;margin:0 auto;background:#fff;border:3px solid var(--ink);border-radius:22px;padding:32px;box-shadow:6px 6px 0 var(--ink);}
+.bcard h3{font-size:17px;font-weight:900;color:var(--brown);margin-bottom:14px;}
+.locs{list-style:none;text-align:left;margin-bottom:20px;}
+.locs li{padding:10px 0;border-bottom:1px dashed #ddd;font-size:14px;display:flex;gap:10px;line-height:1.6;}
+.locs li:last-child{border-bottom:none;}
+.ctabtn{display:inline-block;background:var(--ink);color:var(--gl);border-radius:50px;padding:14px 36px;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;text-decoration:none;letter-spacing:.05em;box-shadow:4px 4px 0 var(--sd);}
+footer{background:var(--ink);color:var(--sg);text-align:center;padding:36px 20px;font-size:12px;line-height:2;}
+footer .ft{font-size:26px;font-weight:900;color:var(--gl);margin-bottom:6px;}
+footer a{color:var(--sg);text-decoration:none;}
+@media(max-width:600px){.bcard{padding:24px 18px;}.ctabtn{padding:12px 28px;font-size:14px;}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <p class="eyebrow">米子城跡の奇石（奇跡）</p>
+  <h1 class="hero-title">たいぎいし<span class="period">。</span></h1>
+  <div class="char-wrap">
+    <div class="bubble">動きたいけど</div>
+    <img class="char-img" src="taigiishi_char.png" alt="たいぎいし">
+  </div>
+  <div class="hero-desc">
+    米子弁の「<em>たいぎいし</em>」を文字ったお菓子です。<br>
+    ※めんどくさいの意<br>
+    <small style="color:#888;font-size:12px;">米子城の石垣に、ひっそりと存在する不思議な石</small>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="qi"><span class="qd"></span>たいぎいし。</span>
+    <span class="qi"><span class="qd"></span>だんだん。</span>
+    <span class="qi"><span class="qd"></span>ほんなら。</span>
+    <span class="qi"><span class="qd"></span>おつかれ。</span>
+    <span class="qi"><span class="qd"></span>なんしちょー。</span>
+    <span class="qi"><span class="qd"></span>ごめん。</span>
+    <span class="qi"><span class="qd"></span>すちゃ。</span>
+    <span class="qi"><span class="qd"></span>いいがん。</span>
+    <span class="qi"><span class="qd"></span>えらいなぁ。</span>
+    <span class="qi"><span class="qd"></span>たいぎいし。</span>
+    <span class="qi"><span class="qd"></span>だんだん。</span>
+    <span class="qi"><span class="qd"></span>ほんなら。</span>
+    <span class="qi"><span class="qd"></span>おつかれ。</span>
+    <span class="qi"><span class="qd"></span>なんしちょー。</span>
+    <span class="qi"><span class="qd"></span>ごめん。</span>
+    <span class="qi"><span class="qd"></span>すちゃ。</span>
+    <span class="qi"><span class="qd"></span>いいがん。</span>
+    <span class="qi"><span class="qd"></span>えらいなぁ。</span>
+  </div>
+</div>
+
+<section class="about">
+  <p class="slabel">About</p>
+  <h2 class="stitle">なんで<span class="ac">たいぎいし</span>？</h2>
+  <div class="about-grid">
+    <div class="acard"><div class="ic">🏯</div><h3>米子城の「鯛石」</h3><p>米子城の石垣にひっそり存在する、鯛に見える不思議な石「鯛石（たいいし）」。その石が、なまけものキャラになりました。</p></div>
+    <div class="acard"><div class="ic">💬</div><h3>米子弁で「めんどくさい」</h3><p>「たいぎいし」は鳥取・米子弁で"めんどくさい・しんどい"の意。のんびり屋で、いつもめんどくさがっている石のキャラです。</p></div>
+    <div class="acard"><div class="ic">🎌</div><h3>見つけた人だけが知る遊び心</h3><p>「ちょっと気になる…見てみたい。」と思わせる米子ならではの遊び心。地元民もにやりとするローカルな愛着キャラです。</p></div>
+  </div>
+</section>
+
+<section class="traits">
+  <p class="slabel">Character</p>
+  <h2 class="stitle">キャラの<span class="ac">特性</span></h2>
+  <div class="tlist">
+    <div class="titem"><div class="tnum">1</div><div class="ttext"><strong>のんびり屋で、いつもめんどくさがっている</strong><p>基本的にやる気はある。ただ、石垣から動くのがたいぎい。</p></div></div>
+    <div class="titem"><div class="tnum">2</div><div class="ttext"><strong>シャイ。家（米子城）に引きこもっている</strong><p>城から出ることはほぼない。でも帰りたいとも思っていない。</p></div></div>
+    <div class="titem"><div class="tnum">3</div><div class="ttext"><strong>城が大好き。誰よりも米子城を見守っている</strong><p>たいぎいけど、米子城のことは愛している。矛盾しとる。</p></div></div>
+    <div class="titem"><div class="tnum">4</div><div class="ttext"><strong>食いしんぼう。甘いものが大好きかも</strong><p>実は甘いものが大好き…かも⁉ 香ばしい瓦煎餅を食べてる姿は何となく嬉しそう。</p></div></div>
+  </div>
+</section>
+
+<section class="goods">
+  <p class="slabel">Goods</p>
+  <h2 class="stitle"><span class="ac">お土産</span>はこれ</h2>
+  <img class="gimg" src="taigiishi_goods.jpg" alt="巾着袋と瓦煎餅イメージ">
+  <div class="gcard">
+    <div class="ghead">🎉 6月初旬 発売予定　第1弾</div>
+    <div class="gbody">
+      <h3>たいぎいし。巾着袋入り瓦煎餅<span class="badge">初回限定500個</span></h3>
+      <div class="gprice">¥1,300 <span>（税込）1袋3枚入</span></div>
+      <p>米子城の「鯛石」をモチーフにした、サクッと香ばしい瓦煎餅。米子城ロゴ入り巾着袋に入っています。小物入れ・旅行にも使えてかわいい♪</p>
+      <p style="font-size:12px;color:#888;margin-top:8px;">おみやげ楽市シッミネ米子店・米子まちなか観光案内所 限定販売</p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:22px;font-size:13px;color:#888;">※数量限定。なくなり次第終了です。（たいぎいけど早めに来てください）</p>
+</section>
+
+<section class="stamps">
+  <p class="slabel">LINE Stamp</p>
+  <h2 class="stitle">LINEスタンプ<span class="ac">申請中！</span></h2>
+  <div class="sprev">
+    <div class="sbub">たいぎいし</div><div class="sbub">だんだん</div><div class="sbub">ほんなら</div>
+    <div class="sbub">わかったで</div><div class="sbub">おつかれ</div><div class="sbub">なんしちょー</div>
+    <div class="sbub">ごめん。</div><div class="sbub">すちゃ。</div><div class="sbub">いいがん</div>
+    <div class="sbub">えらいなぁ</div><div class="sbub">動きたいけど</div><div class="sbub">見守る</div>
+    <div class="sbub">たいせつに</div><div class="sbub">やる気はある</div><div class="sbub">つられたがん</div>
+    <div class="sbub">いしは固いで</div>
+  </div>
+  <div class="sbadge">🎌 審査中 — もうすぐ登場！</div>
+  <p style="margin-top:14px;font-size:13px;color:#888;">リリース次第、インスタでお知らせします</p>
+</section>
+
+<section class="sns">
+  <p class="slabel">Follow us</p>
+  <h2 class="stitle">インスタで<br>最新情報をチェック</h2>
+  <a href="https://www.instagram.com/taigiishi_yonago/" target="_blank" class="sns-btn">📸 @taigiishi_yonago</a>
+  <p class="sns-note">新グッズ情報・LINEスタンプリリース・メディア出演など<br>まずはフォロー＆いいねしてもらえると嬉しいです。<br><strong style="color:var(--gl);">だんだん。🐟</strong></p>
+  <div class="contact">
+    <p>CONTACT / BUSINESS<br><strong>お取り扱い・OEM・商品化・コラボ・メディア取材</strong><br>制作・企画：<strong>GOOD SESSION</strong></p>
+    <a href="https://goodsession.hp.peraichi.com/" target="_blank" class="clink">GOOD SESSION →</a>
+  </div>
+</section>
+
+<section class="buy">
+  <p class="slabel">Where to Buy</p>
+  <h2 class="stitle">どこで<span class="ac">買える</span>？</h2>
+  <div class="bcard">
+    <h3>🗺 販売場所</h3>
+    <ul class="locs">
+      <li><span>🏪</span><span><strong>おみやげ楽市 シッミネ米子店</strong><br>米子駅構内の観光みやげ店</span></li>
+      <li><span>📍</span><span><strong>米子まちなか観光案内所</strong><br>米子城跡近くの観光インフォメーション</span></li>
+    </ul>
+    <p style="font-size:13px;color:#888;margin-bottom:18px;">※初回限定500個。見つけたあなたはラッキー。</p>
+    <a href="https://goodsession.hp.peraichi.com/taigiishi" target="_blank" class="ctabtn">詳細はこちら →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">たいぎいし。</div>
+  <p>米子城跡の鯛石（たいいし）をモチーフにしたキャラクター</p>
+  <p>© 2025 たいぎいし。プロジェクト</p>
+  <p style="margin-top:10px;">
+    <a href="https://www.instagram.com/taigiishi_yonago/" target="_blank">Instagram</a>　|　
+    <a href="https://goodsession.hp.peraichi.com/taigiishi" target="_blank">Official Site</a>
+  </p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.style.opacity=1,e.target.style.transform='translateY(0)'}),{threshold:.1});
+document.querySelectorAll('section,.marquee').forEach(el=>{el.style.cssText+='opacity:0;transform:translateY(24px);transition:.6s ease';obs.observe(el);});
+</script>
+</body>
+</html>
